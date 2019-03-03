@@ -1,6 +1,6 @@
 <h1>kranthiiii</h1>
 
-<app-server></app-server>
+<app-server (addData) = "addDetail($event)" ></app-server>
 
 <div >
      <app-serverdispldata  *ngFor = "let  serverData of serverElements" [element] ="serverData" ></app-serverdispldata>

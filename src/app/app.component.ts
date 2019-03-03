@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
  serverElements   = [{type:"test",name:"kranthi",content:"ccheck data"}] 
+
+ addDetail (serverData : { types : string , name : string ,contents : string}){
+   console.log( "aadadaaaaaaa")
+   this.serverElements.push(
+     {
+      type :serverData.types,
+      name: serverData.name,
+      content: serverData.contents
+     } 
+   )
+ }
+
+
 }

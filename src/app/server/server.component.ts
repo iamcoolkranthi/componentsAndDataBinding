@@ -1,4 +1,5 @@
-import { Component,OnInit} from  '@angular/core';
+import { Component,OnInit,EventEmitter,Output} from  '@angular/core';
+import { EventHandlerVars } from '@angular/compiler/src/compiler_util/expression_converter';
 
 
 @Component({
@@ -8,14 +9,32 @@ import { Component,OnInit} from  '@angular/core';
 })
 
 
+
 export class ServerComponent  implements OnInit {
-    template :String ;
-    serverContent :String ;
+    @Output() addData = new EventEmitter<{ types : string ,name : string ,contents : string }>();
+    template :string ;
+    serverContent :string ;
+    
     ngOnInit(){
         
     }
-
-    successBtn(event : Event){
+  
+    /*successBtn(event : Event){
       this.template = (<HTMLInputElement>event.target).value; 
+    } */
+
+     
+    kranthi(){
+        console.log("hi krantu...............");
+      this.addData.emit({
+              types: this.template, name:'kranthi', contents : this.serverContent
+           });
+
     }
+    
+    
+
+
+
+
 }
